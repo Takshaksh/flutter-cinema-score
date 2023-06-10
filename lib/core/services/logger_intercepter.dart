@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 
 class LoggerInterceptor implements Interceptor {
   @override
-  void onError(DioError err, ErrorInterceptorHandler handler) {
+  void onError(DioException err, ErrorInterceptorHandler handler) {
     log('❌ Dio Error!');
     log('❌ Url: ${err.requestOptions.uri}');
     log('❌ ${err.stackTrace}');

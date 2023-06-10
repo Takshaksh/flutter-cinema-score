@@ -31,7 +31,7 @@ class CustomTheme{
         color: Rang.black
       ),
       textTheme: theme.primaryTextTheme.copyWith(
-        button: theme.primaryTextTheme.button?.copyWith(
+        labelLarge: theme.primaryTextTheme.labelLarge?.copyWith(
           color: Colors.white,
           fontSize: 16,
           fontWeight: FontWeight.bold
