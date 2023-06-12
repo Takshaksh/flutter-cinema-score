@@ -15,6 +15,7 @@ class CinemaScoreApp extends StatelessWidget {
     return MaterialApp(
       title: 'Cinema Score',
       themeMode: ThemeMode.dark,
+      debugShowCheckedModeBanner: false,
       darkTheme: CustomTheme.darkTheme(context),
       /*theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

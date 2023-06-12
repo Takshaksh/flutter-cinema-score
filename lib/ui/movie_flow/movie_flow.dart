@@ -1,6 +1,8 @@
 import 'package:cinema_score/theme/colors.dart';
 import 'package:cinema_score/ui/movie_flow/genre/genre_screen.dart';
 import 'package:cinema_score/ui/movie_flow/landing/landing_screen.dart';
+import 'package:cinema_score/ui/movie_flow/rating/rating_screen.dart';
+import 'package:cinema_score/ui/movie_flow/years_back/years_back_screen.dart';
 import 'package:flutter/material.dart';
 
 class MovieFlow extends StatefulWidget{
@@ -41,9 +43,8 @@ class MovieFlowState extends State<MovieFlow>{
       children: [
         LandingScreen(nextPage: nextPage, previousPage: previousPage),
         GenreScreen(nextPage: nextPage, previousPage: previousPage),
-        Scaffold(body: Container(color: Rang.accentColor,),),
-        Scaffold(body: Container(color: Rang.red500,),),
-
+        RatingScreen(nextPage: nextPage, previousPage: previousPage),
+        YearsBackScreen(nextPage: nextPage, previousPage: previousPage),
       ],
     );
   }

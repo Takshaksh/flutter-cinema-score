@@ -45,6 +45,14 @@ class CustomTheme{
           backgroundColor: Rang.red500
         )
       ),
+      sliderTheme: SliderThemeData(
+        activeTrackColor: Colors.white,
+        inactiveTrackColor: Colors.grey.shade800,
+        thumbColor: Colors.white,
+        valueIndicatorColor: Rang.red500,
+        inactiveTickMarkColor: Colors.transparent,
+        activeTickMarkColor: Colors.transparent
+      ),
     );
   }
 }
