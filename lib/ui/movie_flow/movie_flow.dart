@@ -1,4 +1,5 @@
 import 'package:cinema_score/theme/colors.dart';
+import 'package:cinema_score/ui/movie_flow/genre/genre_screen.dart';
 import 'package:cinema_score/ui/movie_flow/landing/landing_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -39,6 +40,7 @@ class MovieFlowState extends State<MovieFlow>{
       physics: const NeverScrollableScrollPhysics(), // disables swipes by finger
       children: [
         LandingScreen(nextPage: nextPage, previousPage: previousPage),
+        GenreScreen(nextPage: nextPage, previousPage: previousPage),
         Scaffold(body: Container(color: Rang.accentColor,),),
         Scaffold(body: Container(color: Rang.red500,),),
 

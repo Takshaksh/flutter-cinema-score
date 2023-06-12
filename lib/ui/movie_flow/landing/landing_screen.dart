@@ -24,7 +24,7 @@ class LandingScreen extends ConsumerWidget{
               textAlign: TextAlign.center,
             ),
             const Spacer(),
-            Image.asset(AssetManager.movieBoy, width: 350, height: 350,),
+            Image.asset(AssetManager.movieBoy, width: 300, height: 300,),
             const Spacer(),
             PrimaryButton(
               onPressed: nextPage,
