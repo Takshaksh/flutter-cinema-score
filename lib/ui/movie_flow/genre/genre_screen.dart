@@ -1,4 +1,4 @@
-import 'package:cinema_score/core/data/models/genre.dart';
+import 'package:cinema_score/core/models/genre.dart';
 import 'package:cinema_score/core/utils/constants.dart';
 import 'package:cinema_score/ui/movie_flow/genre/list_card.dart';
 import 'package:cinema_score/ui/widgets/primary_button.dart';

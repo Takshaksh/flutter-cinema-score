@@ -1,4 +1,5 @@
 import 'package:cinema_score/core/utils/constants.dart';
+import 'package:cinema_score/ui/movie_flow/result/result_screen.dart';
 import 'package:cinema_score/ui/widgets/primary_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -64,7 +65,7 @@ class _YearsBackScreenState extends State<YearsBackScreen>{
             const Spacer(),
             PrimaryButton(
               onPressed: (){
-
+                Navigator.of(context).push(ResultScreen.route());
               },
               text: "Amazing",
             ),
