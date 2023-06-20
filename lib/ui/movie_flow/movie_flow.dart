@@ -9,10 +9,10 @@ class MovieFlow extends StatefulWidget{
   const MovieFlow({super.key});
 
   @override
-  MovieFlowState createState() => MovieFlowState();
+  _MovieFlowState createState() => _MovieFlowState();
 }
 
-class MovieFlowState extends State<MovieFlow>{
+class _MovieFlowState extends State<MovieFlow>{
   final pageController = PageController();
 
   void nextPage(){
