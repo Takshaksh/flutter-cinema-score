@@ -1,4 +1,3 @@
-import 'package:cinema_score/theme/colors.dart';
 import 'package:cinema_score/ui/movie_flow/genre/genre_screen.dart';
 import 'package:cinema_score/ui/movie_flow/landing/landing_screen.dart';
 import 'package:cinema_score/ui/movie_flow/movie_flow_controller.dart';
@@ -15,7 +14,7 @@ class MovieFlow extends ConsumerWidget{
     return PageView(
       controller: ref.watch(movieFlowControllerProvider).pageController,
       physics: const NeverScrollableScrollPhysics(), // disables swipes by finger
-      children: [
+      children: const [
         LandingScreen(),
         GenreScreen(),
         RatingScreen(),

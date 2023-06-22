@@ -1,29 +1,21 @@
 import 'package:cinema_score/core/utils/constants.dart';
 import 'package:cinema_score/ui/movie_flow/result/result_screen.dart';
 import 'package:cinema_score/ui/widgets/primary_button.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class YearsBackScreen extends StatefulWidget{
-  YearsBackScreen({super.key, required this.nextPage, required this.previousPage});
+import '../movie_flow_controller.dart';
 
-  VoidCallback nextPage;
-  VoidCallback previousPage;
-
-  @override
-  _YearsBackScreenState createState() => _YearsBackScreenState();
-}
-
-class _YearsBackScreenState extends State<YearsBackScreen>{
-  double yearsBack = 10;
+class YearsBackScreen extends ConsumerWidget{
+  const YearsBackScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(
-          onPressed: widget.previousPage,
+          onPressed: ref.read(movieFlowControllerProvider.notifier).previousPage,
         ),
       ),
       body: Center(
@@ -38,7 +30,7 @@ class _YearsBackScreenState extends State<YearsBackScreen>{
             Column(
               children: [
                 Text(
-                  "${yearsBack.ceil()}",
+                  "${ref.watch(movieFlowControllerProvider).yearsBack}",
                   style: theme.textTheme.headlineLarge,
                 ),
                 Text(
@@ -52,15 +44,13 @@ class _YearsBackScreenState extends State<YearsBackScreen>{
             const Spacer(),
             Slider(
               onChanged: (value){
-                setState(() {
-                  yearsBack = value;
-                });
+                ref.read(movieFlowControllerProvider.notifier).updateYearsBack(value.toInt());
               },
-              value: yearsBack,
+              value: ref.watch(movieFlowControllerProvider).yearsBack.toDouble(),
               min: 0,
               max: 100,
               divisions: 100,
-              label: "${yearsBack.ceil()}",
+              label: "${ref.watch(movieFlowControllerProvider).yearsBack}",
             ),
             const Spacer(),
             PrimaryButton(

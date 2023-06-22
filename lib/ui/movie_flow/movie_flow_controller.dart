@@ -37,14 +37,14 @@ class MovieFlowController extends StateNotifier<MovieFlowState> {
 
     state.pageController.nextPage(
       duration: const Duration(milliseconds: 400),
-      curve: Curves.easeOutCubic,
+      curve: Curves.easeInCubic,
     );
   }
 
   void previousPage() {
     state.pageController.previousPage(
       duration: const Duration(milliseconds: 400),
-      curve: Curves.bounceOut,
+      curve: Curves.easeOutCubic,
     );
   }
 
