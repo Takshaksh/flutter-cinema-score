@@ -1,18 +1,17 @@
 import 'package:cinema_score/core/utils/asset_manager.dart';
 import 'package:cinema_score/core/utils/constants.dart';
+import 'package:cinema_score/ui/movie_flow/movie_flow_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../widgets/primary_button.dart';
 
 class LandingScreen extends ConsumerWidget{
-  const LandingScreen({Key? key, required this.nextPage, required this.previousPage}) : super(key: key);
-
-  final VoidCallback nextPage;
-  final VoidCallback previousPage;
+  const LandingScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+
     return Scaffold(
       appBar: AppBar(),
       body: Center(
@@ -27,7 +26,7 @@ class LandingScreen extends ConsumerWidget{
             Image.asset(AssetManager.movieBoy, width: 300, height: 300,),
             const Spacer(),
             PrimaryButton(
-              onPressed: nextPage,
+              onPressed: ref.read(movieFlowControllerProvider.notifier).nextPage,
               text: "Get Started"
             ),
             const SizedBox(height: mMediumSpacing,)
